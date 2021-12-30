@@ -45,3 +45,10 @@ deployment:
 ## Development documentation
 
 If you want to contribute to the project you can check out the [repository documentation](docs/README.md)
+
+
+## Authors
+
+Edouard Sengeissen
+Diego Rojas
+Allan Debeve
