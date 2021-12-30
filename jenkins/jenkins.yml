@@ -1,0 +1,31 @@
+jenkins:
+  systemMessage: "Welcome to the Whanos Jenkins Instance."
+  remotingSecurity:
+    enabled: true
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Whanos master"
+            permissions:
+              - "Overall/Administer"
+            assignments:
+              - "admin"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          name: "Admin"
+          password: ${ADMIN_PASSWORD}
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/lib/git-core/git
+jobs:
+  - file: /var/jenkins_home/job_dsl.groovy
